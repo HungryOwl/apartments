@@ -47,12 +47,17 @@ body {
   margin-right: 10px;
   color: black;
   background-color: white;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
 .card__link {
   display: block;
+  flex-shrink: 0;
+  width: 240px;
+  height: 180px;
   font-size: 0;
   line-height: 0;
+  overflow: hidden;
 }
 
 .card__title {
@@ -91,6 +96,12 @@ body {
   width: 90px;
   flex-shrink: 0;
   font-weight: 600;
+}
+
+.card__img:hover {
+  transform: scale(1.2);
+  transition-property: transform;
+  transition: 0.2s ease all;
 }
 
 .button {
