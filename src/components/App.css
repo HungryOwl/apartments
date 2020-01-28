@@ -16,7 +16,7 @@ body {
 
 .cardList {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1260px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 24px;
@@ -34,15 +34,18 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
   display: flex;
   width: 600px;
+  padding: 5px;
   margin-bottom: 30px;
   margin-left: 10px;
   margin-right: 10px;
+  color: black;
+  background-color: white;
 }
 
 .card__link {
@@ -63,8 +66,6 @@ body {
   padding: 20px;
   font-size: 14px;
   text-align: left;
-  background-color: white;
-  color: black;
   overflow: hidden;
 }
 
@@ -97,14 +98,18 @@ body {
 }
 
 .button--details {
-  position: absolute;
   display: block;
   padding: 4px 8px;
-  right: 15px;
-  bottom: 15px;
   background-color: white;
   border-radius: 4px;
   border: 1px solid #3eb5f1;
   color: black;
+
+}
+
+.card .button--details {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
   z-index: 2;
 }
