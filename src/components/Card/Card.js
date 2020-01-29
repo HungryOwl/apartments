@@ -28,7 +28,7 @@ const Card = ({ features, onClick }) => {
                         <span className="card__value">{features.price}</span>
                     </p>
                 }
-                <Link className="button button--details" to={`/apartment/${features.id}`} onClick={onClick}>Подробнее</Link>
+                <Link className="card__button button button--details" to={`/apartment/${features.id}`} onClick={onClick}>Подробнее</Link>
             </div>
         </article>
     )

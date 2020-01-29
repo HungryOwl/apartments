@@ -4,15 +4,13 @@ import CardList from "./CardList/CardList";
 import Apartment from "./Apartment/Apartment";
 
 const MainRoutes = () => (
-    <main>
+    <main className="page-main">
         <Switch>
-            <Route exact path='/'>
-                <CardList title='Объекты недвижимости'/>
+            <Route exact path="/">
+                <CardList title="Объекты недвижимости"/>
             </Route>
 
-            <Route path="/apartment/:number">
-                <Apartment />
-            </Route>
+            <Route path="/apartment/:number" component={Apartment}/>
         </Switch>
     </main>
 );

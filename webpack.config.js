@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: ['@babel/polyfill', './src/index.js'],
     output: {
-        path: path.join(__dirname, "/build"),
+        path: path.resolve(__dirname, './build'),
+        publicPath: '/',
         filename: 'build.js'
     },
     module: {
@@ -23,8 +24,11 @@ module.exports = {
         ]
     },
     plugins: [
-    new HtmlWebpackPlugin({
-        template: "./src/index.html"
-    })
-]
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
+        })
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 };
