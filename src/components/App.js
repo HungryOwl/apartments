@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import CardList from './CardList/CardList'
+import { Link } from "react-router-dom";
+import MainRoutes from './MainRoutes'
 import 'normalize.css';
 import './App.css';
+
+const Header = () => (
+    <header className='App-header'>
+        <nav>
+            <div><Link to='/'>Home</Link></div>
+            <div><Link to='/apartment'>apartment</Link></div>
+        </nav>
+    </header>
+);
 
 class App extends Component {
   render() {
     return (
       <div className='App'>
-        <header className='App-header'/>
+        <Header/>
 
-        <main>
-          <CardList title='Объекты недвижимости'/>
-        </main>
+        <MainRoutes/>
       </div>
     );
   }

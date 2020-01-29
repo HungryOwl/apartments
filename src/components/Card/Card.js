@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Card = (props) => {
-    const { features } = props;
+const Card = ({ features, onClick }) => {
+    if (!features) {
+        return;
+    }
+
     const previewImage = features.previewImage || 'https://via.placeholder.com/240x180';
 
     return (
-        <article className="card" data-id={features.id}>
-            <a className="card__link" href="#">
+        <article className="card">
+            <Link className="card__link" to={`/apartment/${features.id}`} onClick={onClick}>
                 <img className="card__img" src={previewImage} width='240' height='180'/>
-            </a>
+            </Link>
+
             <div className="card__textblock">
                 {features.title && <div className="card__title">{features.title}</div>}
                 {
@@ -23,7 +28,7 @@ const Card = (props) => {
                         <span className="card__value">{features.price}</span>
                     </p>
                 }
-                <a className="button button--details" href="#">Подробнее</a>
+                <Link className="button button--details" to={`/apartment/${features.id}`} onClick={onClick}>Подробнее</Link>
             </div>
         </article>
     )
