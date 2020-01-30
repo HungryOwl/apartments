@@ -69,7 +69,6 @@ export default class Apartment extends Component {
 
     renderApartmentData() {
         return (
-            this.apartmentData &&
             <div className="apartment__info">
                 {this.renderLine('', this.address)}
                 {this.description && <p className="apartment__text apartment__text--description">{this.description}</p>}
