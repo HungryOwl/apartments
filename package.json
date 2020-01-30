@@ -6,14 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "eject": "react-scripts eject"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "anovikova",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
@@ -25,9 +25,11 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "axios": "^0.19.2",
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.0"
+    "react-router-dom": "^5.1.2"
   }
 }
