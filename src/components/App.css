@@ -125,10 +125,9 @@ body {
   border-radius: 4px;
   border: 1px solid #3eb5f1;
   color: black;
-
 }
 
-.card .button--details {
+.card__button.button--details {
   position: absolute;
   right: 15px;
   bottom: 15px;
@@ -145,4 +144,14 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
+}
+
+.gallery__wrapper {
+  width: 100%;
+  max-width: 680px;
+}
+
+.gallery__wrapper::after {
+  content: '';
+  padding-bottom: 75%;
 }

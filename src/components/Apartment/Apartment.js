@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Gallery from "../Gallery/Gallery";
 
 export default class Apartment extends Component {
     constructor(props) {
@@ -25,9 +26,10 @@ export default class Apartment extends Component {
         return (
             <section className="apartment">
                 <div className="apartment__title">{title}</div>
-
+                {apartmentData.images && apartmentData.images.length && <Gallery images={apartmentData.images}/>}
                 {
-                    apartmentData && <div className="apartment__info">
+                    apartmentData &&
+                    <div className="apartment__info">
                         {apartmentData.address && <p>{apartmentData.address}</p>}
                         {apartmentData.description && <p>{apartmentData.description}</p>}
                         {apartmentData.sellerName && <p>{apartmentData.sellerName}</p>}

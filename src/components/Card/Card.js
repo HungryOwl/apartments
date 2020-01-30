@@ -17,13 +17,15 @@ const Card = ({ features, onClick }) => {
             <div className="card__textblock">
                 {features.title && <div className="card__title">{features.title}</div>}
                 {
-                    features.address && <p className="card__row">
+                    features.address &&
+                    <p className="card__row">
                         <span className="card__caption">адрес:</span>
                         <span className="card__value">{features.address}</span>
                     </p>
                 }
                 {
-                    features.price && <p className="card__row">
+                    features.price &&
+                    <p className="card__row">
                         <span className="card__caption">стоимость:</span>
                         <span className="card__value">{features.price}</span>
                     </p>
