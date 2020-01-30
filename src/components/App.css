@@ -1,248 +1,249 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", "Open Sans","Arial","Helvetica","Garuda", sans-serif;
-  font-size: 16px;
-  line-height: 21px;
-  font-style: normal;
-  font-weight: 400;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Open Sans","Arial","Helvetica","Garuda", sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .App {
-  min-height: 100vh;
-  text-align: center;
-  color: white;
-  background-color: #2c2a36;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    background-color: #2c2a36;
 }
 
 .page-header {
-  height: 40px;
+    height: 40px;
 }
 
 .page-main {
-  width: 100%;
-  max-width: 1260px;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cardList {
-  padding-top: 24px;
-  padding-bottom: 40px;
+    padding-top: 24px;
+    padding-bottom: 40px;
 }
 
 .cardList__title,
 .apartment__title {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 30px;
-  line-height: 40px;
-  font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 900;
 }
 
 .cardList__block {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
-  display: flex;
-  width: 600px;
-  height: 180px;
-  padding: 5px;
-  margin-bottom: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: black;
-  background-color: white;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    width: 600px;
+    height: 180px;
+    padding: 5px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+    background-color: white;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
 .card__link {
-  display: block;
-  flex-shrink: 0;
-  width: 240px;
-  height: 180px;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
+    display: block;
+    flex-shrink: 0;
+    width: 240px;
+    height: 180px;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
 }
 
 .card__title {
-  margin-bottom: 20px;
-  font-size: 18px;
-  font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .card__textblock {
-  position: relative;
-  flex-grow: 1;
-  padding: 20px;
-  font-size: 14px;
-  text-align: left;
-  overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    padding: 20px;
+    font-size: 14px;
+    text-align: left;
+    overflow: hidden;
 }
 
 .card__textblock::after {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));
-  z-index: 1;
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    z-index: 1;
 }
 
 .card__row {
-  display: flex;
-  margin-top: 4px;
-  margin-bottom: 6px;
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 6px;
 }
 
 .card__caption {
-  width: 90px;
-  flex-shrink: 0;
-  font-weight: 600;
+    width: 90px;
+    flex-shrink: 0;
+    font-weight: 600;
 }
 
 .card__img:hover {
-  transform: scale(1.2);
-  transition-property: transform;
-  transition: 0.2s ease all;
+    transform: scale(1.2);
+    transition-property: transform;
+    transition: 0.2s ease all;
 }
 
 .card__button.button--details {
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  z-index: 2;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2;
 }
 
 @media screen and (max-width: 659px) {
-  .card {
-    flex-direction: column;
-    width: 240px;
-    height: auto;
-  }
+    .card {
+        flex-direction: column;
+        width: 240px;
+        height: auto;
+    }
 
-  .card__row {
-    flex-direction: column;
-  }
+    .card__row {
+        flex-direction: column;
+    }
 
-  .card__textblock {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    .card__textblock {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-  .card__textblock::after {
-    content: none;
-  }
+    .card__textblock::after {
+        content: none;
+    }
 
-  .card__button.button--details {
-    position: static;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 20px;
-    text-align: center;
-  }
+    .card__button.button--details {
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 20px;
+        text-align: center;
+    }
 }
 
 .button {
-  display: block;
-  text-decoration: none;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .button--details {
-  display: block;
-  padding: 4px 8px;
-  background-color: white;
-  border-radius: 4px;
-  border: 1px solid #3eb5f1;
-  color: black;
+    display: block;
+    padding: 4px 8px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #3eb5f1;
+    color: black;
 }
 
 .apartment {
-  width: 100%;
-  max-width: 640px;
-  padding-top: 24px;
-  padding-bottom: 40px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    margin: 0 auto;
 }
 
 .apartment__info {
-  padding: 10px 45px 40px 45px;
-  text-align: left;
-  color: black;
-  background-color: white;
+    padding: 10px 45px 40px 45px;
+    text-align: left;
+    color: black;
+    background-color: white;
 }
 
 .apartment__text {
-  margin-top: 5px;
-  margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .apartment__text.apartment__text--description {
-  margin-top: 15px;
-  margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .apartment__button {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .gallery {
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  background-color: white;
-  border: 5px solid white;
-  border-top: 20px solid white;
-  overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: white;
+    border: 5px solid white;
+    border-top: 20px solid white;
+    overflow: hidden;
 }
 
 .gallery__wrapper {
-  padding-left: 40px;
-  padding-right: 40px;
-  overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+    overflow: hidden;
 }
 
 .gallery__button {
-  position: absolute;
-  border: none;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  padding: 0;
-  font-size: 30px;
-  background-color: white;
+    position: absolute;
+    border: none;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    padding: 0;
+    font-size: 30px;
+    background-color: white;
 }
 
 .gallery__image {
-  display: block;
-  width: 100%;
-  max-width: 640px;
-  font-size: 0;
-  line-height: 0;
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    font-size: 0;
+    line-height: 0;
 }
 
 .gallery__button.button--prev {
-  left: 0;
+    left: 0;
 }
 
 .gallery__button.button--next {
-  right: 0;
+    right: 0;
 }
 
 .apartment__text.apartment__text--justify {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
