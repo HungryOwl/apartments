@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Gallery from "../Gallery/Gallery";
+import {Link} from "react-router-dom";
 
 export default class Apartment extends Component {
     constructor(props) {
@@ -9,33 +10,69 @@ export default class Apartment extends Component {
     }
 
     componentDidMount() {
-        this.getApartmentData();
+        this.loadApartmentData();
     }
 
-    getApartmentData = async () => {
-        const id = parseInt(this.props.match.params.number, 10);
-        const response = await axios.get(`http://134.209.138.34/item/${id}`);
-        this.setState({ apartmentData: response.data[0] });
+    get id() {
+        return parseInt(this.props.match.params.number, 10);
+    }
+
+    get apartmentData() {
+        return this.state.apartmentData;
+    }
+
+    set apartmentData(value) {
+        this.setState({ apartmentData: value });
+    }
+
+    get images() {
+        return this.apartmentData.images;
+    }
+
+    get hasImages() {
+        return this.images && this.images.length
+    }
+
+    get title() {
+        return this.apartmentData.title || "Об объекте";
+    }
+
+    get address() {
+        return this.apartmentData.address;
+    }
+
+    get description() {
+        return this.apartmentData.description;
+    }
+
+    get sellerName() {
+        return this.apartmentData.sellerName;
+    }
+
+    get price() {
+        return this.apartmentData.price;
+    }
+
+    loadApartmentData = async () => {
+        const response = await axios.get(`http://134.209.138.34/item/${this.id}`);
+        this.apartmentData = response.data[0];
     };
 
     render() {
-        const { apartmentData } = this.state;
-        const title = apartmentData.title ? apartmentData.title : "Об объекте";
-        console.log('apartmentData', this.state.apartmentData);
-
         return (
             <section className="apartment">
-                <div className="apartment__title">{title}</div>
-                {apartmentData.images && apartmentData.images.length && <Gallery images={apartmentData.images}/>}
+                <div className="apartment__title">{this.title}</div>
+                {this.hasImages && <Gallery images={this.images}/>}
                 {
-                    apartmentData &&
+                    this.apartmentData &&
                     <div className="apartment__info">
-                        {apartmentData.address && <p>{apartmentData.address}</p>}
-                        {apartmentData.description && <p>{apartmentData.description}</p>}
-                        {apartmentData.sellerName && <p>{apartmentData.sellerName}</p>}
-                        {apartmentData.price && <p>{apartmentData.price}</p>}
+                        {this.address && <p>{this.address}</p>}
+                        {this.description && <p>{this.description}</p>}
+                        {this.sellerName && <p>{this.sellerName}</p>}
+                        {this.price && <p>{this.price}</p>}
                     </div>
                 }
+                <Link className="apartment__button button button--details" to={'/'}>На главную</Link>
             </section>
         )
     }
