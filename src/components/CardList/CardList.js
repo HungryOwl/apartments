@@ -36,7 +36,7 @@ export default class CardList extends Component {
         return (
             <section className="cardList">
                 <div className="cardList__title">{this.props.title}</div>
-                <div className="cardList__block">{this.apartmentList.length && this.renderApartmentList(this.apartmentList)}</div>
+                <div className="cardList__block">{this.apartmentList.length > 0 && this.renderApartmentList(this.apartmentList)}</div>
             </section>
         );
     }
