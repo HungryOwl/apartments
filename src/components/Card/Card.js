@@ -15,21 +15,23 @@ const Card = ({ features }) => {
             </Link>
 
             <div className="card__textblock">
-                {features.title && <div className="card__title">{features.title}</div>}
-                {
-                    features.address &&
-                    <p className="card__row">
-                        <span className="card__caption">адрес:</span>
-                        <span className="card__value">{features.address}</span>
-                    </p>
-                }
-                {
-                    features.price &&
-                    <p className="card__row">
-                        <span className="card__caption">стоимость:</span>
-                        <span className="card__value">{features.price}</span>
-                    </p>
-                }
+                <div className="card__text-wrapper">
+                    {features.title && <div className="card__title">{features.title}</div>}
+                    {
+                        features.address &&
+                        <p className="card__row">
+                            <span className="card__caption">адрес:</span>
+                            <span className="card__value">{features.address}</span>
+                        </p>
+                    }
+                    {
+                        features.price &&
+                        <p className="card__row">
+                            <span className="card__caption">стоимость:</span>
+                            <span className="card__value">{features.price}</span>
+                        </p>
+                    }
+                </div>
                 <Link className="card__button button button--details" to={`/apartment/${features.id}`}>Подробнее</Link>
             </div>
         </article>
