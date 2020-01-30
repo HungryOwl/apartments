@@ -9,14 +9,21 @@ export default class CardList extends Component {
         this.state = { apartmentList: [] };
     }
 
-    componentDidMount() {
-        this.resetList();
+    get apartmentList() {
+        return this.state.apartmentList;
     }
 
-    resetList = async () => {
+    set apartmentList(value) {
+        this.setState({ apartmentList: value });
+    }
+
+    componentDidMount() {
+        this.loadList();
+    }
+
+    loadList = async () => {
         const response = await axios.get(hosts.apartmentListPath());
-        this.setState({ apartmentList: response.data });
-        console.log(this.state.apartmentList);
+        this.apartmentList = response.data;
     };
 
     renderApartmentList(featuresArr) {
@@ -26,12 +33,10 @@ export default class CardList extends Component {
     }
 
     render() {
-        const { apartmentList } = this.state;
-
         return (
             <section className="cardList">
                 <div className="cardList__title">{this.props.title}</div>
-                <div className="cardList__block">{apartmentList.length > 0 && this.renderApartmentList(apartmentList)}</div>
+                <div className="cardList__block">{this.apartmentList.length && this.renderApartmentList(this.apartmentList)}</div>
             </section>
         );
     }

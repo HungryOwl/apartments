@@ -29,6 +29,10 @@ export default class Gallery extends Component {
         return this.images[this.pageNumber];
     }
 
+    isButton() {
+        return this.props.images.length > 1;
+    }
+
     increaseCounter = () => {
         this.pageNumber = (this.pageNumber >= this.maxPage) ? this.minPage : this.pageNumber + 1;
     };
@@ -40,11 +44,13 @@ export default class Gallery extends Component {
     render() {
         return (
             <div className="gallery">
-                <button className="gallery__button button button--prev" onClick={this.decreaseCounter}>Предыдущий</button>
                 <div className="gallery__wrapper">
-                    <img className="gallery__image" src={this.currentImage} alt="#"/>
+                    {this.isButton() && <button className="gallery__button button button--prev" onClick={this.decreaseCounter}>❮</button>}
+                    <div className="gallery__img-wrapper">
+                        <img className="gallery__image" src={this.currentImage} alt="#"/>
+                    </div>
+                    {this.isButton() && <button className="gallery__button button button--next" onClick={this.increaseCounter}>❯</button>}
                 </div>
-                <button className="gallery__button button button--next" onClick={this.increaseCounter}>Следующий</button>
             </div>
         )
     }

@@ -59,21 +59,33 @@ export default class Apartment extends Component {
         this.apartmentData = response.data[0];
     };
 
+    renderGallery() {
+        return this.hasImages && <Gallery images={this.images}/>;
+    }
+
+    renderLine(prefix, text) {
+        return text && <p className="apartment__text">{prefix && <b>{prefix + ' '}</b>}{text}</p>;
+    }
+
+    renderApartmentData() {
+        return (
+            this.apartmentData &&
+            <div className="apartment__info">
+                {this.renderLine('', this.address)}
+                {this.description && <p className="apartment__text apartment__text--description">{this.description}</p>}
+                {this.renderLine('Цена: ', this.price)}
+                {this.sellerName && <p className="apartment__text"><b>Продавец: </b><a className="link" href="#">{this.sellerName}</a></p>}
+                <Link className="apartment__button button button--details" to={'/'}>На главную</Link>
+            </div>
+        )
+    }
+
     render() {
         return (
             <section className="apartment">
                 <div className="apartment__title">{this.title}</div>
-                {this.hasImages && <Gallery images={this.images}/>}
-                {
-                    this.apartmentData &&
-                    <div className="apartment__info">
-                        {this.address && <p>{this.address}</p>}
-                        {this.description && <p>{this.description}</p>}
-                        {this.sellerName && <p>{this.sellerName}</p>}
-                        {this.price && <p>{this.price}</p>}
-                    </div>
-                }
-                <Link className="apartment__button button button--details" to={'/'}>На главную</Link>
+                {this.renderGallery()}
+                {this.renderApartmentData()}
             </section>
         )
     }
