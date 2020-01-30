@@ -5,9 +5,7 @@ export default class Gallery extends Component {
         super(props);
 
         this.images = props.images;
-        this.slideCount = this.images.length;
-        let pageNumber = 0;
-        this.state = { pageNumber };
+        this.state = { pageNumber: 0 };
     }
 
     get pageNumber() {
@@ -24,7 +22,7 @@ export default class Gallery extends Component {
     }
 
     get maxPage() {
-        return this.slideCount - 1;
+        return this.images.length - 1;
     }
 
     get currentImage() {
@@ -35,7 +33,7 @@ export default class Gallery extends Component {
         this.pageNumber = (this.pageNumber >= this.maxPage) ? this.minPage : this.pageNumber + 1;
     };
 
-    decreaseCounter = () =>  {
+    decreaseCounter = () => {
         this.pageNumber = (this.pageNumber <= this.minPage) ? this.maxPage : this.pageNumber - 1;
     };
 
