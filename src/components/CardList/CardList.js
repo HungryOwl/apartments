@@ -19,13 +19,9 @@ export default class CardList extends Component {
         console.log(this.state.apartmentList);
     };
 
-    onCardClick = (id) => () => {
-        console.log(id);
-    };
-
     renderApartmentList(featuresArr) {
         return (
-            featuresArr.map((feature, i) => <Card features={feature} onClick={this.onCardClick(feature.id)} key={i} />)
+            featuresArr.map((feature, i) => <Card features={feature} key={i} />)
         );
     }
 

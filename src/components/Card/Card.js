@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Card = ({ features, onClick }) => {
+const Card = ({ features }) => {
     if (!features) {
         return;
     }
@@ -10,7 +10,7 @@ const Card = ({ features, onClick }) => {
 
     return (
         <article className="card">
-            <Link className="card__link" to={`/apartment/${features.id}`} onClick={onClick}>
+            <Link className="card__link" to={`/apartment/${features.id}`}>
                 <img className="card__img" src={previewImage} width='240' height='180'/>
             </Link>
 
@@ -30,7 +30,7 @@ const Card = ({ features, onClick }) => {
                         <span className="card__value">{features.price}</span>
                     </p>
                 }
-                <Link className="card__button button button--details" to={`/apartment/${features.id}`} onClick={onClick}>Подробнее</Link>
+                <Link className="card__button button button--details" to={`/apartment/${features.id}`}>Подробнее</Link>
             </div>
         </article>
     )
