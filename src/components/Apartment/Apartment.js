@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import hosts from '../hosts';
 import Gallery from "../Gallery/Gallery";
 import {Link} from "react-router-dom";
 
@@ -54,7 +55,7 @@ export default class Apartment extends Component {
     }
 
     loadApartmentData = async () => {
-        const response = await axios.get(`http://134.209.138.34/item/${this.id}`);
+        const response = await axios.get(hosts.apartmentItemPath(this.id));
         this.apartmentData = response.data[0];
     };
 

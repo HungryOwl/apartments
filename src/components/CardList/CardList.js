@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import hosts from '../hosts';
 import Card from '../Card/Card'
 
 export default class CardList extends Component {
@@ -13,7 +14,7 @@ export default class CardList extends Component {
     }
 
     resetList = async () => {
-        const response = await axios.get('http://134.209.138.34/items');
+        const response = await axios.get(hosts.apartmentListPath());
         this.setState({ apartmentList: response.data });
         console.log(this.state.apartmentList);
     };
