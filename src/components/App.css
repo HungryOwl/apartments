@@ -170,7 +170,7 @@ body {
 
 .apartment {
     width: 100%;
-    max-width: 640px;
+    max-width: 730px;
     padding-top: 24px;
     padding-bottom: 40px;
     margin: 0 auto;
@@ -202,7 +202,7 @@ body {
     box-sizing: border-box;
     position: relative;
     width: 100%;
-    max-width: 640px;
+    max-width: 730px;
     margin: 0 auto;
     background-color: white;
     border: 5px solid white;
@@ -229,8 +229,7 @@ body {
 
 .gallery__image {
     display: block;
-    width: 100%;
-    max-width: 640px;
+    margin: 0 auto;
     font-size: 0;
     line-height: 0;
 }
