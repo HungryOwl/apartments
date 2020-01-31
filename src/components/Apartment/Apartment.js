@@ -70,7 +70,7 @@ export default class Apartment extends Component {
     renderApartmentData() {
         return (
             <div className="apartment__info">
-                {this.renderLine('', this.address)}
+                {this.renderLine('Адрес:', this.address)}
                 {this.description && <p className="apartment__text apartment__text--description">{this.description}</p>}
                 {this.renderLine('Цена: ', this.price)}
                 {this.sellerName && <p className="apartment__text"><b>Продавец: </b><a className="link" href="#">{this.sellerName}</a></p>}
