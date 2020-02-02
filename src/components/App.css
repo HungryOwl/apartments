@@ -246,6 +246,7 @@ body {
 .gallery__img-wrapper {
     background-color: #2c2a36;
     overflow: hidden;
+    height: 480px;
 }
 
 .gallery__image {
@@ -258,6 +259,10 @@ body {
 }
 
 @media screen and (max-width: 420px) {
+    .gallery__img-wrapper {
+        height: auto;
+    }
+
     .gallery__image {
         width: 100%;
         height: auto;
