@@ -245,6 +245,7 @@ body {
 
 .gallery__img-wrapper {
     background-color: #2c2a36;
+    overflow: hidden;
 }
 
 .gallery__image {
