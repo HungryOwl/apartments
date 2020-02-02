@@ -246,12 +246,14 @@ body {
 .gallery__img-wrapper {
     background-color: #2c2a36;
     overflow: hidden;
-    height: 480px;
+    max-height: 480px;
 }
 
 .gallery__image {
     display: block;
     margin: 0 auto;
+    max-width: 640px;
+    max-height: 480px;
     font-size: 0;
     line-height: 0;
     margin-left: 50%;
