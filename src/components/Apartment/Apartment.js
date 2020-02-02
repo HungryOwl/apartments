@@ -63,15 +63,15 @@ export default class Apartment extends Component {
         return this.hasImages && <Gallery images={this.images}/>;
     }
 
-    renderLine(prefix, text) {
-        return text && <p className="apartment__text">{prefix && <b>{prefix + ' '}</b>}{text}</p>;
+    renderLine(prefix, text, classes) {
+        return text && <p className={"apartment__text " + classes}>{prefix && <b>{prefix + ' '}</b>}{text}</p>;
     }
 
     renderApartmentData() {
         return (
             <div className="apartment__info">
                 {this.renderLine('Адрес:', this.address)}
-                {this.description && <p className="apartment__text apartment__text--description">{this.description}</p>}
+                {this.renderLine('', this.description, 'apartment__text--description')}
                 {this.renderLine('Цена: ', this.price)}
                 {this.sellerName && <p className="apartment__text"><b>Продавец: </b><a className="link" href="#">{this.sellerName}</a></p>}
                 <Link className="apartment__button button button--details" to={'/'}>На главную</Link>

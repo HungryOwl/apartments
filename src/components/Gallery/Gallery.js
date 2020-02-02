@@ -5,16 +5,16 @@ export default class Gallery extends Component {
         super(props);
 
         this.images = props.images;
-        this.state = { pageNumber: 0 };
+        this.state = { currentPage: 0 };
     }
 
-    get pageNumber() {
-        let { pageNumber } = this.state;
-        return pageNumber;
+    get currentPage() {
+        let { currentPage } = this.state;
+        return currentPage;
     }
 
-    set pageNumber(value) {
-        this.setState({ pageNumber: value });
+    set currentPage(value) {
+        this.setState({ currentPage: value });
     }
 
     get minPage() {
@@ -26,7 +26,7 @@ export default class Gallery extends Component {
     }
 
     get currentImage() {
-        return this.images[this.pageNumber];
+        return this.images[this.currentPage];
     }
 
     isButton() {
@@ -34,11 +34,11 @@ export default class Gallery extends Component {
     }
 
     increaseCounter = () => {
-        this.pageNumber = (this.pageNumber >= this.maxPage) ? this.minPage : this.pageNumber + 1;
+        this.currentPage = (this.currentPage >= this.maxPage) ? this.minPage : this.currentPage + 1;
     };
 
     decreaseCounter = () => {
-        this.pageNumber = (this.pageNumber <= this.minPage) ? this.maxPage : this.pageNumber - 1;
+        this.currentPage = (this.currentPage <= this.minPage) ? this.maxPage : this.currentPage - 1;
     };
 
     render() {
